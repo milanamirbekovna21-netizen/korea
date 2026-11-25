@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Тянь-Шань — путешествия по Кыргызстану</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600&family=Unbounded:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f4f8f9; --surface:#ffffff; --ink:#12202b; --muted:#51636f;
+  --lake:#0b5c8a; --lake-soft:#d7e9f3; --yurt:#c8372d; --meadow:#4f8456; --line:#d3dee3;
+  --f-head:"Unbounded","Arial Black",sans-serif; --f-body:"Onest","Segoe UI",Arial,sans-serif;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){--bg:#0e1a22;--surface:#16262f;--ink:#e8f0f3;--muted:#9bb0ba;--lake:#6bb8e4;--lake-soft:#1b3646;--yurt:#ee7b70;--meadow:#8cc794;--line:#27404c}
+}
+:root[data-theme="dark"]{--bg:#0e1a22;--surface:#16262f;--ink:#e8f0f3;--muted:#9bb0ba;--lake:#6bb8e4;--lake-soft:#1b3646;--yurt:#ee7b70;--meadow:#8cc794;--line:#27404c}
+html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px)}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--f-body);line-height:1.6;font-size:17px}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:30}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--yurt);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--bg);border-bottom:1px solid var(--line)}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{font-family:var(--f-head);font-weight:700;font-size:16px;text-decoration:none}
+nav{display:flex;gap:22px;align-items:center}
+nav a{text-decoration:none;font-weight:500;font-size:15px;color:var(--muted)}
+nav a:hover{color:var(--ink)}
+.burger{display:none;background:none;border:1px solid var(--line);color:var(--ink);border-radius:8px;padding:8px 12px;font:inherit;cursor:pointer}
+@media(max-width:700px){
+  .burger{display:block}
+  nav{display:none;position:absolute;top:60px;left:0;right:0;background:var(--bg);flex-direction:column;align-items:flex-start;padding:16px 20px;border-bottom:1px solid var(--line)}
+  nav.open{display:flex}
+}
+.hero{position:relative;overflow:hidden;background:linear-gradient(180deg,var(--lake-soft) 0%,var(--bg) 100%);padding:64px 0 0}
+.hero h1{font-family:var(--f-head);font-weight:700;font-size:clamp(32px,6.4vw,64px);line-height:1.08;margin:0 0 18px;max-width:14ch;letter-spacing:-.02em}
+.hero p{max-width:46ch;color:var(--muted);font-size:19px;margin:0 0 28px}
+.btn{display:inline-block;background:var(--yurt);color:#fff;border:0;border-radius:999px;padding:14px 26px;font:600 16px var(--f-body);text-decoration:none;cursor:pointer}
+html[data-theme="dark"] .btn{color:#12202b}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .btn{color:#12202b}}
+.btn.ghost{background:transparent;color:var(--ink);border:1.5px solid var(--ink);margin-left:8px}
+.ridge{display:block;width:100%;height:auto;margin-top:36px}
+.ridge .far{fill:var(--lake);opacity:.35}
+.ridge .mid{fill:var(--lake);opacity:.6}
+.ridge .near{fill:var(--meadow)}
+.ridge .snow{fill:var(--bg)}
+#parallax .layer{transition:transform .15s ease-out}
+section{padding:72px 0}
+h2{font-family:var(--f-head);font-weight:500;font-size:clamp(24px,3.6vw,36px);margin:0 0 10px;letter-spacing:-.01em}
+.lead{color:var(--muted);max-width:56ch;margin:0 0 28px}
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:26px}
+.chip{border:1.5px solid var(--line);background:var(--surface);color:var(--ink);border-radius:999px;padding:8px 18px;font:500 15px var(--f-body);cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--lake);border-color:var(--lake);color:#fff}
+html[data-theme="dark"] .chip[aria-pressed="true"]{color:#0e1a22}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .chip[aria-pressed="true"]{color:#0e1a22}}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:20px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:16px;overflow:hidden;display:flex;flex-direction:column}
+.card .pic{height:130px;position:relative}
+.card .pic span{position:absolute;left:14px;bottom:10px;background:var(--surface);color:var(--ink);font-size:13px;font-weight:600;padding:3px 10px;border-radius:999px}
+.card .body{padding:16px 18px 20px}
+.card h3{margin:0 0 6px;font-family:var(--f-head);font-weight:500;font-size:18px}
+.card p{margin:0 0 12px;color:var(--muted);font-size:15px}
+.card .meta{font-size:14px;font-weight:500}
+.card button{margin-top:12px;background:none;border:0;color:var(--lake);font:600 15px var(--f-body);padding:0;cursor:pointer;text-decoration:underline}
+.planner{background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.plan-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
+@media(max-width:760px){.plan-grid{grid-template-columns:1fr}}
+.field{margin-bottom:22px}
+.field label,.field legend{display:flex;justify-content:space-between;font-weight:600;margin-bottom:8px;padding:0}
+fieldset{border:0;padding:0;margin:0 0 22px}
+input[type=range]{width:100%;accent-color:var(--yurt)}
+.styles{display:flex;gap:8px;flex-wrap:wrap}
+.styles label{display:block;margin:0;font-weight:500}
+.styles input{position:absolute;opacity:0}
+.styles span{display:block;border:1.5px solid var(--line);border-radius:12px;padding:10px 16px;cursor:pointer}
+.styles input:checked+span{border-color:var(--yurt);background:var(--lake-soft)}
+.styles input:focus-visible+span{outline:3px solid var(--yurt);outline-offset:2px}
+.result{background:var(--lake);color:#fff;border-radius:20px;padding:30px}
+html[data-theme="dark"] .result{color:#0e1a22}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .result{color:#0e1a22}}
+.result .sum{font-family:var(--f-head);font-weight:700;font-size:clamp(28px,5vw,42px);margin:4px 0 14px}
+.result ul{list-style:none;padding:0;margin:0 0 14px}
+.result li{display:flex;justify-content:space-between;padding:7px 0;border-top:1px solid rgba(255,255,255,.3)}
+.result small{opacity:.85}
+.seasons{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
+.season{border-left:4px solid var(--c);padding:4px 0 4px 16px}
+.season h3{margin:0 0 4px;font-family:var(--f-head);font-weight:500;font-size:17px}
+.season p{margin:0;color:var(--muted);font-size:15px}
+dialog{border:0;border-radius:18px;padding:28px;max-width:460px;width:calc(100% - 32px);background:var(--surface);color:var(--ink)}
+dialog::backdrop{background:rgba(10,20,28,.6)}
+dialog h3{font-family:var(--f-head);font-weight:500;margin:0 0 10px}
+dialog ul{padding-left:20px;color:var(--muted)}
+footer{padding:36px 0 48px;color:var(--muted);font-size:14px;border-top:1px solid var(--line)}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;align-items:center}
+.theme{background:none;border:1px solid var(--line);color:var(--ink);border-radius:8px;padding:6px 12px;font:inherit;cursor:pointer}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}#parallax .layer{transition:none}}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="#top">Тянь-Шань</a>
+    <button class="burger" id="burger" aria-expanded="false" aria-controls="nav">Меню</button>
+    <nav id="nav">
+      <a href="#places">Места</a>
+      <a href="#planner">Бюджет</a>
+      <a href="#seasons">Когда ехать</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <div class="hero">
+    <div class="wrap">
+      <h1>Горы, озёра и юрты Кыргызстана</h1>
+      <p>Выберите место, прикиньте бюджет и узнайте, в какой сезон лучше ехать.</p>
+      <a class="btn" href="#places">Смотреть места</a>
+      <a class="btn ghost" href="#planner">Посчитать бюджет</a>
+    </div>
+    <svg class="ridge" id="parallax" viewBox="0 0 1200 260" preserveAspectRatio="none" aria-hidden="true">
+      <g class="layer" data-depth="6"><path class="far" d="M-40 260V150l140-70 110 60 130-90 150 100 120-60 160 90 140-80 160 90 160-60 60 50v120z"/></g>
+      <g class="layer" data-depth="14"><path class="mid" d="M-40 260V190l120-80 90 50 150-110 140 120 110-70 150 100 130-70 170 90 80-30v90z"/><path class="snow" d="M270 50l-30 36 22-8 14 14 14-12z" opacity=".9"/></g>
+      <g class="layer" data-depth="24"><path class="near" d="M-40 260V220c120-30 220-10 330 0s230 20 360-5 250-15 400 5 100 0 140-10v50z"/></g>
+    </svg>
+  </div>
+
+  <section id="places">
+    <div class="wrap">
+      <h2>Куда поехать</h2>
+      <p class="lead">Пять мест, с которых удобно начать знакомство со страной.</p>
+      <div class="filters" role="group" aria-label="Фильтр по типу отдыха" id="filters"></div>
+      <div class="grid" id="grid"></div>
+    </div>
+  </section>
+
+  <section class="planner" id="planner">
+    <div class="wrap">
+      <h2>Сколько стоит поездка</h2>
+      <p class="lead">Примерный расчёт на человека: жильё, питание и местный транспорт. Билеты не включены.</p>
+      <div class="plan-grid">
+        <div>
+          <div class="field">
+            <label for="days">Дней в поездке <output id="daysOut">5</output></label>
+            <input type="range" id="days" min="1" max="21" value="5">
+          </div>
+          <div class="field">
+            <label for="people">Путешественников <output id="peopleOut">2</output></label>
+            <input type="range" id="people" min="1" max="10" value="2">
+          </div>
+          <fieldset>
+            <legend>Стиль поездки</legend>
+            <div class="styles">
+              <label><input type="radio" name="style" value="3000"><span>Бюджетный</span></label>
+              <label><input type="radio" name="style" value="6500" checked><span>Комфортный</span></label>
+              <label><input type="radio" name="style" value="14000"><span>Премиум</span></label>
+            </div>
+          </fieldset>
+        </div>
+        <div class="result" aria-live="polite">
+          <small>Итого на всю группу</small>
+          <div class="sum" id="sum">—</div>
+          <ul>
+            <li><span>На человека</span><b id="perPerson">—</b></li>
+            <li><span>В день на человека</span><b id="perDay">—</b></li>
+          </ul>
+          <small>Суммы в сомах, ориентировочные. Реальные цены зависят от сезона.</small>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="seasons">
+    <div class="wrap">
+      <h2>Когда ехать</h2>
+      <p class="lead">У каждого сезона свои маршруты.</p>
+      <div class="seasons">
+        <div class="season" style="--c:var(--meadow)"><h3>Весна</h3><p>Цветут предгорья, в горах ещё снег. Хорошо для прогулок у Бишкека.</p></div>
+        <div class="season" style="--c:var(--lake)"><h3>Лето</h3><p>Главный сезон: купание на Иссык-Куле, юрточные лагеря, высокогорные озёра.</p></div>
+        <div class="season" style="--c:var(--yurt)"><h3>Осень</h3><p>Тепло днём, мало туристов, золотые ущелья. Лучшее время для треккинга.</p></div>
+        <div class="season" style="--c:var(--muted)"><h3>Зима</h3><p>Лыжи в Караколе и Ала-Арче, термальные источники, тишина на озере.</p></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>Тянь-Шань · учебный сайт о путешествиях</span>
+    <button class="theme" id="theme">Сменить тему</button>
+  </div>
+</footer>
+
+<dialog id="dlg">
+  <h3 id="dlgTitle"></h3>
+  <p id="dlgText"></p>
+  <ul id="dlgList"></ul>
+  <button class="btn" id="dlgClose">Закрыть</button>
+</dialog>
+
+<script>
+const places = [
+  {n:"Иссык-Куль", t:"Озёра", g:"linear-gradient(135deg,#0b5c8a,#6bb8e4)", d:"Второе по величине горное озеро мира. Пляжи на северном берегу, термальные источники на южном.", best:"Июнь — сентябрь", from:"от 4 ч от Бишкека", tips:["Северный берег — для пляжа, южный — для тишины","Сказка и Бокомбаево: красные каньоны","Бронируйте жильё заранее в июле"]},
+  {n:"Ала-Арча", t:"Горы", g:"linear-gradient(135deg,#4f8456,#a9cfa6)", d:"Национальный парк в часе езды от столицы. Тропы к водопаду и леднику Адыгине.", best:"Июнь — октябрь", from:"1 ч от Бишкека", tips:["Вход платный, берите паспорт","Выходите до 9 утра","Погода в горах меняется быстро"]},
+  {n:"Сон-Куль", t:"Озёра", g:"linear-gradient(135deg,#5a7d9a,#e0d6a8)", d:"Высокогорное озеро на высоте 3000 м. Летом здесь пасутся табуны, а пастухи принимают гостей в юртах.", best:"Июль — август", from:"6–8 ч от Бишкека", tips:["Ночью холодно даже летом","Дорога открыта только летом","Попробуйте кумыс и боорсоки"]},
+  {n:"Каракол", t:"Горы", g:"linear-gradient(135deg,#12202b,#5a8bb0)", d:"Город у восточного края Иссык-Куля. Отсюда уходят маршруты в ущелья Алтын-Арашан и Джеты-Огуз, зимой — на лыжи.", best:"Круглый год", from:"6 ч от Бишкека", tips:["Деревянная церковь и дунганская мечеть","Горячие источники Алтын-Арашана","Лыжная база — с декабря"]},
+  {n:"Бурана и Ак-Бешим", t:"Культура", g:"linear-gradient(135deg,#c8372d,#f0b27a)", d:"Башня XI века и остатки города Суяб на Шёлковом пути. Короткая поездка из Бишкека на полдня.", best:"Апрель — октябрь", from:"1 ч от Бишкека", tips:["Поднимитесь на башню Бурана","Рядом музей петроглифов","Сочетайте с Ала-Арчой в один день"]}
+];
+const cats = ["Все","Озёра","Горы","Культура"];
+const grid = document.getElementById("grid"), filters = document.getElementById("filters");
+let current = "Все";
+
+function renderFilters(){
+  filters.innerHTML = "";
+  cats.forEach(c=>{
+    const b = document.createElement("button");
+    b.className = "chip"; b.textContent = c;
+    b.setAttribute("aria-pressed", c===current);
+    b.onclick = ()=>{current=c; renderFilters(); renderCards();};
+    filters.appendChild(b);
+  });
+}
+function renderCards(){
+  grid.innerHTML = "";
+  places.filter(p=>current==="Все"||p.t===current).forEach(p=>{
+    const el = document.createElement("article");
+    el.className = "card";
+    el.innerHTML = `<div class="pic" style="background:${p.g}"><span>${p.t}</span></div>
+      <div class="body"><h3>${p.n}</h3><p>${p.d}</p>
+      <div class="meta">${p.best} · ${p.from}</div>
+      <button type="button">Советы</button></div>`;
+    el.querySelector("button").onclick = ()=>openDlg(p);
+    grid.appendChild(el);
+  });
+}
+const dlg = document.getElementById("dlg");
+function openDlg(p){
+  document.getElementById("dlgTitle").textContent = p.n;
+  document.getElementById("dlgText").textContent = "Лучшее время: " + p.best + ".";
+  document.getElementById("dlgList").innerHTML = p.tips.map(t=>"<li>"+t+"</li>").join("");
+  dlg.showModal();
+}
+document.getElementById("dlgClose").onclick = ()=>dlg.close();
+dlg.addEventListener("click", e=>{ if(e.target===dlg) dlg.close(); });
+
+// Planner
+const days = document.getElementById("days"), people = document.getElementById("people");
+const fmt = n => new Intl.NumberFormat("ru-RU").format(Math.round(n)) + " сом";
+function calc(){
+  const rate = +document.querySelector('input[name=style]:checked').value;
+  const d = +days.value, p = +people.value;
+  document.getElementById("daysOut").textContent = d;
+  document.getElementById("peopleOut").textContent = p;
+  document.getElementById("sum").textContent = fmt(rate*d*p);
+  document.getElementById("perPerson").textContent = fmt(rate*d);
+  document.getElementById("perDay").textContent = fmt(rate);
+}
+document.querySelectorAll("#planner input").forEach(i=>i.addEventListener("input",calc));
+
+// Mobile menu
+const burger = document.getElementById("burger"), nav = document.getElementById("nav");
+burger.onclick = ()=>{const o = nav.classList.toggle("open"); burger.setAttribute("aria-expanded", o);};
+nav.addEventListener("click", e=>{ if(e.target.tagName==="A"){nav.classList.remove("open"); burger.setAttribute("aria-expanded","false");} });
+
+// Parallax on the hero mountains
+const hero = document.querySelector(".hero");
+if(!matchMedia("(prefers-reduced-motion: reduce)").matches){
+  hero.addEventListener("pointermove", e=>{
+    const x = (e.clientX / innerWidth - .5);
+    document.querySelectorAll("#parallax .layer").forEach(l=>{
+      l.style.transform = `translateX(${-x * l.dataset.depth}px)`;
+    });
+  });
+}
+
+// Theme toggle
+document.getElementById("theme").onclick = ()=>{
+  const root = document.documentElement;
+  const dark = root.dataset.theme ? root.dataset.theme==="dark" : matchMedia("(prefers-color-scheme: dark)").matches;
+  root.dataset.theme = dark ? "light" : "dark";
+};
+
+renderFilters(); renderCards(); calc();
+</script>
+</body>
+</html>
+
+</body>
+</html>
